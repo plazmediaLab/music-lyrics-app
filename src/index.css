@@ -1,0 +1,7 @@
+.titulo-cancion{
+    border-bottom: .3rem solid var(--skyblue);
+    padding-bottom: .7em;
+}
+.letra{
+    white-space: pre-wrap
+}
