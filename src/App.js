@@ -11,11 +11,15 @@ import Informacion from './components/Informacion';
 const DivGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 3rem;
   margin: 2rem 0;
 
   @media (max-width: 767px){
     grid-template-columns: 1fr;
+
+    .gridItem-2{
+      grid-row: 1 / 2;
+    }
   }
 `;
 
@@ -36,16 +40,6 @@ function App() {
       const {artista, cancion} = busquedaletra;
       const url = `https://api.lyrics.ovh/v1/${artista}/${cancion}`
       const url2 = `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${artista}`
-
-      // try {
-      //   const resultado = await axios.get(url)
-      //   guardarResultadosOK(true)
-      //   guardarLetra(resultado.data.lyrics)
-      // } catch (e) {
-      //   if (e.response.status === 404) {
-      //     guardarResultadosOK(false)
-      //   };
-      // }
 
       const [letraApi, informacion] = await Promise.all([
         axios.get(url).catch( 
@@ -102,14 +96,15 @@ function App() {
         }
 
         <DivGrid>
-          <div>
+          <div className="gridItem-1">
             <Informacion 
               artista={artista}
             />
           </div>
-          <div>
+          <div className="gridItem-2">
             <Cancion 
               letra={letra}
+              busquedaletra={busquedaletra}
             />
           </div>
         </DivGrid>

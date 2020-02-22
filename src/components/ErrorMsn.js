@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 
 const ErrorMsn = ({importanceClass, msn, icon}) => {
@@ -16,5 +16,13 @@ const ErrorMsn = ({importanceClass, msn, icon}) => {
     </div>
   );
 };
+
+
+ErrorMsn.propTypes = {
+  importanceClass: PropTypes.string.isRequired,
+  msn: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+}
+
 
 export default ErrorMsn

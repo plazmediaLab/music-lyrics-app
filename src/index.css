@@ -1,7 +1,17 @@
-.titulo-cancion{
-    border-bottom: .3rem solid var(--skyblue);
-    padding-bottom: .7em;
+.titulo{
+    border-bottom: .3rem solid var(--skyblue-dark-2);
+    padding: .37em 0;
+    line-height: 1;
 }
 .letra{
-    white-space: pre-wrap
+    white-space: pre-wrap 
+}
+.btn-face{
+    color: var(--blue);
+}
+.btn-twit{
+    color: var(--skyblue-light-1);
+}
+.btn-web{
+    color: var(--tangerine);
 }

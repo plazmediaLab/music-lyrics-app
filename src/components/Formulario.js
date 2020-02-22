@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 
 const ColRow = styled.div`
@@ -102,5 +103,12 @@ const Formulario = ({ guardarError, guardarBusquedaLetra }) => {
     </form>
   );
 };
+
+
+Formulario.propTypes = {
+  guardarError: PropTypes.func.isRequired,
+  guardarBusquedaLetra: PropTypes.func.isRequired,
+}
+
 
 export default Formulario
